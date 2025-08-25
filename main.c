@@ -6,9 +6,9 @@ int main(void) {
         while ((SYSCTL_PRGPIO_R & 0x20) == 0);   // Wait until ready
 
         GPIO_PORTF_LOCK_R = 0x4C4F434B;          // Unlock commit register
-        GPIO_PORTF_CR_R |= 0x1F;                 // Allow changes to PF0–PF4
-        GPIO_PORTF_DIR_R |= 0x0E;                // PF1, PF2, PF3 = output (LEDs)
-        GPIO_PORTF_DEN_R |= 0x1F;                // Enable digital for PF0–PF4
+        GPIO_PORTF_CR_R |= 0x1F;                 // Allow changes to PF0â€“PF4
+        GPIO_PORTF_DIR_R |= 0x0E;                // PF1, PF2, PF3 = output (L
+        GPIO_PORTF_DEN_R |= 0x1F;                // Enable digital for PF0â€“PF4
         GPIO_PORTF_PUR_R |= 0x11;                // Enable pull-ups on PF0, PF4 (switches)
 
     while(1) {
